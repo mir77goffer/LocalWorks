@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/11/2026 às 11:21
+-- Tempo de geração: 04/11/2026 às 10:19
 -- Versão do servidor: 10.11.16-MariaDB
 -- Versão do PHP: 8.3.36
 
@@ -51,7 +51,8 @@ CREATE TABLE `candidato` (
 --
 
 INSERT INTO `candidato` (`id_candidato`, `area_interesse`, `cidade`, `resumo`, `pretensao_salarial`) VALUES
-(7, 'Técnico em Desenvolvimento de Sistemas/Tecnologia da Informação', 'Campinas SP', 'Sou Técnico em Desenvolvimento de Sistemas formado pelo Etec - Centro Paula Souza e possuo experiência em análise, desenvolvimento e manutenção de aplicações. \r\nTenho uma sólida base em programação orientada a objetos, bancos de dados relacionais e metodologias ágeis, além de interesse constante em aprender novas tecnologias e aprimorar minhas habilidades.', 3700.00);
+(7, 'Técnico em Desenvolvimento de Sistemas/Tecnologia da Informação', 'Campinas SP', 'Sou Técnico em Desenvolvimento de Sistemas formado pelo Etec - Centro Paula Souza e possuo experiência em análise, desenvolvimento e manutenção de aplicações. \r\nTenho uma sólida base em programação orientada a objetos, bancos de dados relacionais e metodologias ágeis, além de interesse constante em aprender novas tecnologias e aprimorar minhas habilidades.', 3700.00),
+(9, 'Serviços domésticos, limpeza e conservação.', 'Campinas SP', '\"Diarista detalhista com mais de cinco anos de experiência: sou organizada, com habilidade em arrumação de quartos, troca de enxoval e manuseio adequado de produtos de limpeza profissional. Comprometida com prazos, pontualidade e excelência no atendimento. Disponibilidade para atuar em turnos e elevar a qualidade da hotelaria.\"', 2200.00);
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,8 @@ CREATE TABLE `candidatura` (
 
 INSERT INTO `candidatura` (`id_candidatura`, `id_oportunidade`, `id_usuario`, `mensagem`, `status`, `data_candidatura`) VALUES
 (1, 1, 7, 'Meu nome é Ademir Santos Neves Sou Técnico em Desenvolvimento de Sistemas formado pelo Etec - Centro Paula Souza e possuo experiência em análise, desenvolvimento e manutenção de aplicações. \r\nTenho uma sólida base em programação orientada a objetos, bancos de dados relacionais e metodologias ágeis, além de interesse constante em aprender novas tecnologias e aprimorar minhas habilidades.', 'enviada', '2026-11-01 05:21:48'),
-(2, 2, 7, 'Meu nome é Armindo Joaquim Neves sou Eletricista de Manutenção Eletroeletrônica .\r\nMinha Formação: \r\n• Curso Técnico em Eletrotécnica – SENAI Campinas (2012) \r\n• Certificação NR-10 (Segurança em Instalações e Serviços com Eletricidade) \r\n• Certificação NR-35 (Trabalho em Altura)', 'enviada', '2026-11-02 05:27:18');
+(2, 2, 7, 'Meu nome é Armindo Joaquim Neves sou Eletricista de Manutenção Eletroeletrônica .\r\nMinha Formação: \r\n• Curso Técnico em Eletrotécnica – SENAI Campinas (2012) \r\n• Certificação NR-10 (Segurança em Instalações e Serviços com Eletricidade) \r\n• Certificação NR-35 (Trabalho em Altura)', 'enviada', '2026-11-02 05:27:18'),
+(3, 4, 9, '\" Meu nome é Gabriela Ferreira Costa sou diarista detalhista com mais de cinco anos de experiência: sou organizada, com habilidade em arrumação de quartos, troca de enxoval e manuseio adequado de produtos de limpeza profissional. Comprometida com prazos, pontualidade e excelência no atendimento. Disponibilidade para atuar em turnos e elevar a qualidade da hotelaria.\"', 'enviada', '2026-11-04 05:19:54');
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,8 @@ CREATE TABLE `contratante` (
 INSERT INTO `contratante` (`id_contratante`, `cnpj`, `empresa`) VALUES
 (1, 'CNPJ: 45.040.186/0', 'DevSpark & desenvolvimento de software.'),
 (2, '12.345.678/0001-99', 'Luz & Força Energia'),
-(5, '12.345.678/0001-90', 'NovaEstrutura Engenharia e Construções Ltda.');
+(5, '12.345.678/0001-90', 'NovaEstrutura Engenharia e Construções Ltda.'),
+(8, '15.375.698/0003-39', 'Hotel Aurora Palace');
 
 -- --------------------------------------------------------
 
@@ -148,7 +151,8 @@ CREATE TABLE `oportunidade` (
 INSERT INTO `oportunidade` (`id_oportunidade`, `titulo`, `descricao`, `localizacao`, `valor_proposto`, `publicada`, `data_publicacao`, `id_contratante`, `id_categoria`) VALUES
 (1, 'Desenvolvedor de sistemas', 'O profissional será responsável por criar, testar, atualizar, manter e melhorar programas, aplicativos e softwares utilizados em computadores, celulares, sites e sistemas empresariais, atendendo às necessidades de empresas e usuários finais.', 'Campinas SP', 3500.00, 1, '2026-10-30 21:32:31', 1, 7),
 (2, 'Eletricista de Manutenção', 'Realizar instalações elétricas prediais/industriais (ajuste conforme sua necessidade).\r\nExecutar manutenção preventiva e corretiva em sistemas elétricos.\r\nLer e interpretar projetos elétricos. Garantir o cumprimento das normas de segurança.', 'Campinas SP', 3202.00, 1, '2026-10-30 23:08:08', 2, 1),
-(3, 'Profissional da construção civil', 'Principais Atividades\r\n•	Executar serviços de alvenaria, reboco e assentamento de pisos e revestimentos.\r\n•	Construir e reparar estruturas de concreto.\r\n•	Interpretar projetos e orientações técnicas.\r\n•	Garantir a qualidade e segurança na execução das atividades.\r\n•	Trabalhar em equipe para cumprimento dos prazos da obra.', 'Campinas SP', 2800.00, 1, '2026-11-01 03:48:10', 5, 4);
+(3, 'Profissional da construção civil', 'Principais Atividades\r\n•	Executar serviços de alvenaria, reboco e assentamento de pisos e revestimentos.\r\n•	Construir e reparar estruturas de concreto.\r\n•	Interpretar projetos e orientações técnicas.\r\n•	Garantir a qualidade e segurança na execução das atividades.\r\n•	Trabalhar em equipe para cumprimento dos prazos da obra.', 'Campinas SP', 2800.00, 1, '2026-11-01 03:48:10', 5, 4),
+(4, 'Diarista para vagas temporárias.', 'Realizar a higienização e arrumação dos apartamentos, reposição de amenities (roupas de cama, banho e produtos de higiene) e organização do setor de governança.  Requisitos: Experiência anterior em hotelaria ou limpeza profissional, agilidade, atenção aos detalhes e disponibilidade de horário.', 'Campinas SP', 2000.00, 1, '2026-11-04 05:13:56', 8, 2);
 
 -- --------------------------------------------------------
 
@@ -216,13 +220,15 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `telefone`, `senha`) VALUES
-(1, 'Consultoria e Transformação Digital.', 'mir.sn@hotmail.com', '19 9961-94205', '$2y$10$2gRpunxdk6guHIv65lgGoO2jGIbblJD0UVNhY0qiSmCYRil54dKIS'),
-(2, 'Agência Energia total S.A.', 'contato@luzforca.com.br', '(19) 3456-7890', '$2y$10$RQQhr0JTh/t5twxTPrw.DugzPcERWo2xe4cDA0evsiwjpyY3HKODi'),
+(1, 'Consultoria e Transformação Digital.', 'devspark@yahoo.com', '19 9961-94205', '$2y$10$2gRpunxdk6guHIv65lgGoO2jGIbblJD0UVNhY0qiSmCYRil54dKIS'),
+(2, 'Agência Energia total S.A.', 'luz&forca@gmail.com', '(19) 3456-7890', '$2y$10$RQQhr0JTh/t5twxTPrw.DugzPcERWo2xe4cDA0evsiwjpyY3HKODi'),
 (3, 'Ademir Santos Neves', 'mir.sn.jales@gmail.com', '19 9814-88070', '$2y$10$idLs9MG4JOqAM6/mQNHQie4fjVsExfqpaABNbzWa.32k4oh3BypE2'),
 (4, 'Carlos Henrique da Silva', 'carlos.silva@yahoo.com', '(19) 91234-5678', '$2y$10$ThylMS29iJTC9CxYfvFD7OXBOT3aXzTMyLUHlp9zJcsEemx1yQuYS'),
-(5, 'Construindo hoje os espaços do futuro', 'contato@novaestrutura.com.br', '(19) 3333-4567', '$2y$10$nhjF3X6uWEvlIQcJ3Q21keZ5zan4ocTBGurj7wCLUd/I10eMIBdrC'),
-(6, 'João da Silva', 'joaosilva.pedreiro@email.com', '(19) 99999-1234', '$2y$10$Q/oZdszoAYtriCu2sRPhXuW33d4lj8iQdLIlXcJ4j9yFLIeJQUKCO'),
-(7, 'Armindo Joaquim Neves', 'armindo.jn@gmail.com', '(19) 9814-28078', '$2y$10$z7Qvpn52/hYjEugjTzYcEOl8S9nU9Gjj105Z80A6wMel6k3XvpqrO');
+(5, 'Construindo hoje os espaços do futuro', 'novaestrutura@hotmail.com', '(19) 3333-4567', '$2y$10$nhjF3X6uWEvlIQcJ3Q21keZ5zan4ocTBGurj7wCLUd/I10eMIBdrC'),
+(6, 'João da Silva', 'joaosilva.pedreiro@gmail.com', '(19) 99999-1234', '$2y$10$Q/oZdszoAYtriCu2sRPhXuW33d4lj8iQdLIlXcJ4j9yFLIeJQUKCO'),
+(7, 'Armindo Joaquim Neves', 'armindo.jn@gmail.com', '(19) 9814-28078', '$2y$10$z7Qvpn52/hYjEugjTzYcEOl8S9nU9Gjj105Z80A6wMel6k3XvpqrO'),
+(8, 'Hotelaria Aurora Palace Brasil S/A', 'aurorapalacehotel@yahoo.com', '(19) 3456-7890', '$2y$10$PMW7HWfxSDErr5Jj5e8lgOWY9B01mV3rGFhMein/eG6l05Qon62nu'),
+(9, 'Gabriela Ferreira Costa', 'gabriela.fc@gmail.com', '(19) 9814-28078', '$2y$10$qCznd14NzN3z9HzbPOGhkesG2E513h2Gz7vmvL8fzucE20JNNJoRm');
 
 --
 -- Índices para tabelas despejadas
@@ -298,7 +304,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `candidatura`
 --
 ALTER TABLE `candidatura`
-  MODIFY `id_candidatura` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_candidatura` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `categoria`
@@ -310,7 +316,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `oportunidade`
 --
 ALTER TABLE `oportunidade`
-  MODIFY `id_oportunidade` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_oportunidade` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `servico`
@@ -322,7 +328,7 @@ ALTER TABLE `servico`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_usuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para tabelas despejadas
