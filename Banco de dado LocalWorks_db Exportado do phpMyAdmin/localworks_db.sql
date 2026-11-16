@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/11/2026 às 10:19
+-- Tempo de geração: 16/11/2026 às 16:56
 -- Versão do servidor: 10.11.16-MariaDB
 -- Versão do PHP: 8.3.36
 
@@ -124,7 +124,8 @@ INSERT INTO `contratante` (`id_contratante`, `cnpj`, `empresa`) VALUES
 (1, 'CNPJ: 45.040.186/0', 'DevSpark & desenvolvimento de software.'),
 (2, '12.345.678/0001-99', 'Luz & Força Energia'),
 (5, '12.345.678/0001-90', 'NovaEstrutura Engenharia e Construções Ltda.'),
-(8, '15.375.698/0003-39', 'Hotel Aurora Palace');
+(8, '15.375.698/0003-39', 'Hotel Aurora Palace'),
+(10, '48.372.915/0001-67', 'Verde Vida Jardinagem & Paisagismo LTDA');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,8 @@ INSERT INTO `oportunidade` (`id_oportunidade`, `titulo`, `descricao`, `localizac
 (1, 'Desenvolvedor de sistemas', 'O profissional será responsável por criar, testar, atualizar, manter e melhorar programas, aplicativos e softwares utilizados em computadores, celulares, sites e sistemas empresariais, atendendo às necessidades de empresas e usuários finais.', 'Campinas SP', 3500.00, 1, '2026-10-30 21:32:31', 1, 7),
 (2, 'Eletricista de Manutenção', 'Realizar instalações elétricas prediais/industriais (ajuste conforme sua necessidade).\r\nExecutar manutenção preventiva e corretiva em sistemas elétricos.\r\nLer e interpretar projetos elétricos. Garantir o cumprimento das normas de segurança.', 'Campinas SP', 3202.00, 1, '2026-10-30 23:08:08', 2, 1),
 (3, 'Profissional da construção civil', 'Principais Atividades\r\n•	Executar serviços de alvenaria, reboco e assentamento de pisos e revestimentos.\r\n•	Construir e reparar estruturas de concreto.\r\n•	Interpretar projetos e orientações técnicas.\r\n•	Garantir a qualidade e segurança na execução das atividades.\r\n•	Trabalhar em equipe para cumprimento dos prazos da obra.', 'Campinas SP', 2800.00, 1, '2026-11-01 03:48:10', 5, 4),
-(4, 'Diarista para vagas temporárias.', 'Realizar a higienização e arrumação dos apartamentos, reposição de amenities (roupas de cama, banho e produtos de higiene) e organização do setor de governança.  Requisitos: Experiência anterior em hotelaria ou limpeza profissional, agilidade, atenção aos detalhes e disponibilidade de horário.', 'Campinas SP', 2000.00, 1, '2026-11-04 05:13:56', 8, 2);
+(4, 'Diarista para vagas temporárias.', 'Realizar a higienização e arrumação dos apartamentos, reposição de amenities (roupas de cama, banho e produtos de higiene) e organização do setor de governança.  Requisitos: Experiência anterior em hotelaria ou limpeza profissional, agilidade, atenção aos detalhes e disponibilidade de horário.', 'Campinas SP', 2000.00, 1, '2026-11-04 05:13:56', 8, 2),
+(5, 'Jardinagem', 'A Verde Vida Jardinagem & Paisagismo busca profissional comprometido (a) e responsável para atuar na manutenção e conservação de jardins residenciais, comerciais e condomínios.', 'Campinas SP', 2800.00, 1, '2026-11-14 23:58:30', 10, 6);
 
 -- --------------------------------------------------------
 
@@ -228,7 +230,8 @@ INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `telefone`, `senha`) VALUE
 (6, 'João da Silva', 'joaosilva.pedreiro@gmail.com', '(19) 99999-1234', '$2y$10$Q/oZdszoAYtriCu2sRPhXuW33d4lj8iQdLIlXcJ4j9yFLIeJQUKCO'),
 (7, 'Armindo Joaquim Neves', 'armindo.jn@gmail.com', '(19) 9814-28078', '$2y$10$z7Qvpn52/hYjEugjTzYcEOl8S9nU9Gjj105Z80A6wMel6k3XvpqrO'),
 (8, 'Hotelaria Aurora Palace Brasil S/A', 'aurorapalacehotel@yahoo.com', '(19) 3456-7890', '$2y$10$PMW7HWfxSDErr5Jj5e8lgOWY9B01mV3rGFhMein/eG6l05Qon62nu'),
-(9, 'Gabriela Ferreira Costa', 'gabriela.fc@gmail.com', '(19) 9814-28078', '$2y$10$qCznd14NzN3z9HzbPOGhkesG2E513h2Gz7vmvL8fzucE20JNNJoRm');
+(9, 'Gabriela Ferreira Costa', 'gabriela.fc@gmail.com', '(19) 9814-28078', '$2y$10$qCznd14NzN3z9HzbPOGhkesG2E513h2Gz7vmvL8fzucE20JNNJoRm'),
+(10, 'Jardim Verde Nobre Paisagismo', 'verdevidajardinagem@yahoo.com', '(19) 99876-5432', '$2y$10$DsrDIAoNBjVtP.vAuFWtgeUKOUGebDs3aS8QyJx4gbGwL4z/C5R.a');
 
 --
 -- Índices para tabelas despejadas
@@ -316,7 +319,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `oportunidade`
 --
 ALTER TABLE `oportunidade`
-  MODIFY `id_oportunidade` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_oportunidade` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `servico`
@@ -328,7 +331,7 @@ ALTER TABLE `servico`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_usuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para tabelas despejadas
